@@ -1,4 +1,4 @@
-![badge](https://github.com/bogdanov2000/yamdb_final/workflows/YAMDB_workflow/badge.svg)
+![badge](https://github.com/bogdanov2000/yamdb_final/actions/workflows/main.yaml/badge.svg)
 
 # api_yamdb Docker 
 
