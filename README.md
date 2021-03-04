@@ -1,6 +1,6 @@
 ![badge](https://github.com/bogdanov2000/yamdb_final/actions/workflows/main.yaml/badge.svg)
 
-# api_yamdb Docker 
+# api_yamdb_final
 
 ## Описание 
 Проект выполнен в учебных целях в работе с API (DRF).  
