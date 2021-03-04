@@ -12,9 +12,9 @@ class APIUserManager(BaseUserManager):
 
     def create_superuser(self, email, password, **kwargs):
         user = self.model(email=email,
-                         is_staff=True,
-                         is_superuser=True,
-                         **kwargs)
+                          is_staff=True,
+                          is_superuser=True,
+                          **kwargs)
         user.set_password(password)
         user.save()
         return user
@@ -81,8 +81,8 @@ class Title(models.Model):
 
 class Review(models.Model):
     title = models.ForeignKey(Title,
-                             on_delete=models.CASCADE,
-                             related_name="reviews")
+                              on_delete=models.CASCADE,
+                              related_name="reviews")
     text = models.CharField(max_length=400)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.IntegerField(validators=[MinValueValidator(1),
@@ -95,12 +95,12 @@ class Review(models.Model):
 
 class Comment(models.Model):
     review = models.ForeignKey(Review,
-                              on_delete=models.CASCADE,
-                              related_name="comments")
+                               on_delete=models.CASCADE,
+                               related_name="comments")
     text = models.TextField()
     author = models.ForeignKey(User, 
-                              on_delete=models.CASCADE, 
-                              related_name="comments")
+                               on_delete=models.CASCADE, 
+                               related_name="comments")
     pub_date = models.DateTimeField("Дата публикации", 
     auto_now_add=True, 
     db_index=True)
