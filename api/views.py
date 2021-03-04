@@ -77,7 +77,8 @@ def get_jwt_token(request):
     user = get_object_or_404(User, email=email)
 
     if confirmation_code != user.confirmation_code:
-        return Response({"Bad confirmation code"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"Bad confirmation code"},
+         status=status.HTTP_400_BAD_REQUEST)
 
     token = AccessToken.for_user(user)
     return Response({"token": f"{token}"}, status=status.HTTP_200_OK)

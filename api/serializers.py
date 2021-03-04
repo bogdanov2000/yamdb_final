@@ -15,7 +15,12 @@ class CheckCodeSerializer(serializers.Serializer):
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ("first_name", "last_name", "username", "bio", "email", "role")
+        fields = ("first_name", 
+        "last_name", 
+        "username", 
+        "bio", 
+        "email", 
+        "role")
         model = User
 
 
@@ -34,12 +39,19 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class TitleReadSerializer(serializers.ModelSerializer):
-    rating = serializers.IntegerField(source="reviews__score__avg", read_only=True)
+    rating = serializers.IntegerField(source="reviews__score__avg", 
+    read_only=True)
     genre = GenreSerializer(many=True, read_only=True)
     category = CategorySerializer(read_only=True)
 
     class Meta:
-        fields = ("id", "name", "year", "rating", "description", "genre", "category")
+        fields = ("id", 
+        "name", 
+        "year", 
+        "rating", 
+        "description", 
+        "genre", 
+        "category")
         model = Title
 
 
@@ -79,7 +91,8 @@ class ReviewSerializer(serializers.ModelSerializer):
     def validate(self, data):
         if self.context["request"].method == "POST":
             user = self.context["request"].user
-            title_id = self.context["request"].parser_context["kwargs"]["title_id"]
+            title_id = self.context["request"]. \ 
+            parser_context["kwargs"]["title_id"]
             if Review.objects.filter(author=user, title__id=title_id).exists():
                 raise serializers.ValidationError(
                     "Вы уже оставили отзыв на данное произведение"

@@ -11,7 +11,10 @@ class APIUserManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, password, **kwargs):
-        user = self.model(email=email, is_staff=True, is_superuser=True, **kwargs)
+        user = self.model(email=email, 
+        is_staff=True, 
+        is_superuser=True, 
+        **kwargs)
         user.set_password(password)
         user.save()
         return user
@@ -77,7 +80,9 @@ class Title(models.Model):
 
 
 class Review(models.Model):
-    title = models.ForeignKey(Title, on_delete=models.CASCADE, related_name="reviews")
+    title = models.ForeignKey(Title, 
+    on_delete=models.CASCADE, 
+    related_name="reviews")
     text = models.CharField(max_length=400)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.IntegerField(
@@ -94,8 +99,12 @@ class Comment(models.Model):
         Review, on_delete=models.CASCADE, related_name="comments"
     )
     text = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments")
-    pub_date = models.DateTimeField("Дата публикации", auto_now_add=True, db_index=True)
+    author = models.ForeignKey(User, 
+    on_delete=models.CASCADE, 
+    related_name="comments")
+    pub_date = models.DateTimeField("Дата публикации", 
+    auto_now_add=True, 
+    db_index=True)
 
     class Meta:
         ordering = ("-id",)

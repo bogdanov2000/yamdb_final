@@ -1,3 +1,5 @@
+![badge](https://github.com/bogdanov2000/yamdb_final/workflows/YAMDB_workflow/badge.svg)
+
 # api_yamdb Docker 
 
 ## Описание 

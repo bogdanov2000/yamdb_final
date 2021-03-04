@@ -23,7 +23,9 @@ router.register(
     CommentViewSet,
     basename="comments",
 )
-router.register(r"titles/(?P<title_id>\d+)/reviews", ReviewViewSet, basename="reviews")
+router.register(r"titles/(?P<title_id>\d+)/reviews",
+ ReviewViewSet,
+  basename="reviews")
 router.register("users", UserViewSet)
 
 urlpatterns = [
