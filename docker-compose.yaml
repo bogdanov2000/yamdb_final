@@ -3,23 +3,23 @@ version: '3.8'
 volumes:
   postgres_data:
   static_data:
-
+  nginx_conf:
+  
 services:
 
   db:
-    image: postgres:12.4
+    image: postgres:latest
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env
 
   web:
-    build: .
+    image: bogdanov2000/yamdb_final
     restart: always
     volumes:
-      - static_data:/code/static
-    ports:
-      - "8000:8000"
+      - static_data:/code/static/
+      - nginx_conf:/code/conf.d/
     depends_on:
       - db
     env_file:
@@ -29,8 +29,9 @@ services:
     image: nginx:latest
     restart: always  
     volumes:
-      - static_data:/code/static
+      - static_data:/code/static/
+      - nginx_conf:/etc/nginx/conf.d/ 
     ports:
-      - "8000:80"  
+      - "8080:80"  
     depends_on:
       - web    
