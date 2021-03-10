@@ -1,4 +1,4 @@
-![yamdb_workflow](https://github.com/bogdanov2000/yamdb_final/actions/workflows/main.yaml/badge.svg)
+![yamdb_workflow](https://github.com/bogdanov2000/yamdb_final/actions/workflows/main.yml/badge.svg)
 
 <!---
 https://github.com/bogdanov2000/yamdb_final/workflows/badge.svg
