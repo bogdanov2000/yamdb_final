@@ -31,7 +31,7 @@ DB_PORT=5432
 6. Внутри контейнера выполнить команды `python manage.py makemigrations` и `python manage.py migrate`.
 7. Создать суперпользователя командой `python manage.py createsuperuser`.
  
-Проект доступен по адресу https://ogv.ru/api/v1/ 
+Проект доступен по адресу https://ogv.ru:8080/api/v1/ 
  
  
 ### Итоговый проект курса "Работа с внешними API"   
