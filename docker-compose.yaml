@@ -26,7 +26,7 @@ services:
       - ./.env
 
   nginx:
-    image: nginx:1.19.8
+    image: nginx:1.19
     restart: always  
     volumes:
       - static_data:/code/static/
