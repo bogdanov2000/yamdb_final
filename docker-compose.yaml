@@ -15,7 +15,7 @@ services:
       - ./.env
 
   web:
-    image: bogdanov2000/yamdb_final
+    image: bogdanov2000/yamdb_final:latest
     restart: always
     volumes:
       - static_data:/code/static/
@@ -32,6 +32,8 @@ services:
       - static_data:/code/static/
       - nginx_conf:/etc/nginx/conf.d/ 
     ports:
-      - "80:80"  
+      - "80:80"
+    env_file:
+      - ./.env
     depends_on:
       - web    
