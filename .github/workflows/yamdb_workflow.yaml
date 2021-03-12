@@ -47,7 +47,7 @@ jobs:
   
   deploy:
     runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     needs: build_and_push_to_docker_hub
     steps:
       - name: Check out the repo
@@ -62,17 +62,6 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           source: "docker-compose.yaml, conf.d/default.conf, static, media, .env"
           target: "~/code/"
-         
-      - name: copy env
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
-          key: ${{ secrets.SSH_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }}
-          source: ".env"
-          target: "~/code/api_yamdb/"
-
 
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
