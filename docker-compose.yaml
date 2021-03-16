@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   web:
-    image: bogdanov2000/yamdb_final_2
+    image: bogdanov2000/yamdb_final
     container_name: web
     restart: always
     volumes:

@@ -111,8 +111,8 @@ jobs:
        passphrase: ${{ secrets.PASSPHRASE }}
        script: |
 
-         sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final_2
-         id=$(sudo docker create ${{ secrets.DOCKER_USERNAME }}/yamdb_final_2)
+         sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
+         id=$(sudo docker create ${{ secrets.DOCKER_USERNAME }}/yamdb_final)
 
          FILE=docker-compose.yaml
          if [ -f "$FILE" ]
