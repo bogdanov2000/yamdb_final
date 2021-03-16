@@ -1,4 +1,4 @@
-![yamdb_workflow](https://github.com/bogdanov2000/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
+![yamdb_workflow](https://github.com/bogdanov2000/yamdb_final_2/actions/workflows/yamdb_workflow.yaml/badge.svg)
 
 # api_yamdb_final
 
@@ -25,13 +25,9 @@ POSTGRES_PASSWORD=postgres
 DB_HOST=db
 DB_PORT=5432
 ```
-3. В терминале в корневой директории приложения выполнить команду `docker-compose up`.
-4. После запуска контейнера в новой вкладке терминала выполнить команду `docker container ls` и узнать id контейнера.
-5. Перейти в контейнер выполнив команду `docker container exec -it <id контейнер> bash`.
-6. Внутри контейнера выполнить команды `python manage.py makemigrations` и `python manage.py migrate`.
-7. Создать суперпользователя командой `python manage.py createsuperuser`.
+
  
-Проект доступен по адресу https://ogv.ru:8080/api/v1/ 
+Проект достуен по адресу http://130.193.41.158/api/v1/ 
  
  
 ### Итоговый проект курса "Работа с внешними API"   
@@ -39,3 +35,4 @@ DB_PORT=5432
 - [Анна Карпенко]
 - [Александр Королев]
 - [Сергей Богданов]
+
