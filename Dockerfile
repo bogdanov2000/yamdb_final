@@ -1,6 +1,6 @@
 FROM python:3.8.5
 WORKDIR /code
-RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+RUN apt update && apt add postgresql-dev gcc python3-dev musl-dev
 COPY requirements.txt .
 RUN python3 -m pip install --upgrade pip && pip3 install -r requirements.txt --no-cache-dir
 COPY . .
