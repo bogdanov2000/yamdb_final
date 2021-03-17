@@ -110,7 +110,6 @@ jobs:
        key: ${{ secrets.SSH_KEY }}
        passphrase: ${{ secrets.PASSPHRASE }}
        script: |
-# !!!!!!!!! 
          sudo docker pull vamotest/yamdb_final
          id=$(sudo docker create vamotest/yamdb_final)
 
