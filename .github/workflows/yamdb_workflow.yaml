@@ -143,7 +143,19 @@ jobs:
          sudo docker volume prune -f > /dev/null 2>&1
 
 
-   
+   - name: Prepare django
+     uses: appleboy/ssh-action@master
+     with:
+       host: ${{ secrets.CLOUD_HOST }}
+       username: ${{ secrets.CLOUD_USER }}
+       port: ${{ secrets.CLOUD_PORT }}
+       key: ${{ secrets.SSH_KEY }}
+       passphrase: ${{ secrets.PASSPHRASE }}
+       script: |
+         sudo docker-compose exec -T web python3 manage.py collectstatic --noinput
+         sudo docker-compose exec -T web python3 manage.py migrate --noinput
+         sudo docker-compose exec -T web python3 manage.py loaddata /usr/src/web/fixture.json
+
 
   send_message:
     runs-on: ubuntu-latest
