@@ -37,4 +37,6 @@ volumes:
   static_data:
   media_data:
   nginx_config:
+  
+  
 
