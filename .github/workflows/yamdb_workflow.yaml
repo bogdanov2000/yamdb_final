@@ -57,7 +57,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final
+          tags: vamotest/yamdb_final
   
   deploy:
    runs-on: ubuntu-latest
@@ -110,9 +110,9 @@ jobs:
        key: ${{ secrets.SSH_KEY }}
        passphrase: ${{ secrets.PASSPHRASE }}
        script: |
-
-         sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
-         id=$(sudo docker create ${{ secrets.DOCKER_USERNAME }}/yamdb_final)
+# !!!!!!!!! ${{ secrets.DOCKER_USERNAME }}/yamdb_final
+         sudo docker pull vamotest/yamdb_final
+         id=$(sudo docker create vamotest/yamdb_final)
 
          FILE=docker-compose.yaml
          if [ -f "$FILE" ]
