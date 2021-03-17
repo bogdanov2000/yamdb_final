@@ -34,6 +34,7 @@ jobs:
         export POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
         export DB_HOST=${{ secrets.DB_HOST }}
         export DB_PORT=${{ secrets.DB_PORT }}
+        export BASE_DIR=${{ secrets.BASE_DIR }}
         python3 -m pytest tests/ -v
   
   build_and_push_to_docker_hub:
@@ -83,6 +84,7 @@ jobs:
          export POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
          export DB_HOST=${{ secrets.DB_HOST }}
          export DB_PORT=${{ secrets.DB_PORT }}
+         export BASE_DIR=${{ secrets.BASE_DIR }}
 
    - name: Is docker install
      uses: appleboy/ssh-action@master
