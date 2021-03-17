@@ -12,7 +12,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = False
 
-DEBUG = os.environ.get('DEBUG')
+# DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS')
 
