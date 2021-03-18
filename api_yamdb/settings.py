@@ -16,9 +16,6 @@ DEBUG = False
 
 # DEBUG = os.environ.get('DEBUG')
 
-# ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(',')
-
-
 ALLOWED_HOSTS =  [i.strip() for i in os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(',')]
 
 # Application definition
