@@ -34,6 +34,7 @@ jobs:
         export POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
         export DB_HOST=${{ secrets.DB_HOST }}
         export DB_PORT=${{ secrets.DB_PORT }}
+        export DJANGO_SETTINGS_MODULE=${{ secrets.DJANGO_SETTINGS_MODULE }}
         python3 -m pytest tests/ -v
       
   
@@ -84,6 +85,7 @@ jobs:
          export POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
          export DB_HOST=${{ secrets.DB_HOST }}
          export DB_PORT=${{ secrets.DB_PORT }}
+         export DJANGO_SETTINGS_MODULE=${{ secrets.DJANGO_SETTINGS_MODULE }}
 
    - name: Is docker install
      uses: appleboy/ssh-action@master
